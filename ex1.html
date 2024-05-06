@@ -4,23 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>이전 페이지로의 이동 금지</title>
-    <script>
-        // 페이지 로드 시 이전 페이지로의 이동을 금지하는 함수 실행
-        window.onload = function() {
-            disableBackButton();
-        };
-
-        function disableBackButton() {
-            // 브라우저의 뒤로가기 이벤트 감지 시 다시 현재 페이지로 돌아오도록 함
-            window.history.pushState(null, "", window.location.href);
-            window.addEventListener('popstate', function(event) {
-                window.history.pushState(null, "", window.location.href);
-            });
-        }
-    </script>
+   
 </head>
 <body>
-    <h1>이전 페이지로의 이동 금지</h1>
-    <p>이 페이지는 뒤로가기 버튼을 클릭하여 이전 페이지로 이동할 수 없습니다.</p>
+    <h3>저장파일명 : a학번.c</h3>
+    <h3>동물원 입장료 계산하기</h3>
+    <pre>
+   단체 방문객의 인원수를 입력받아 동물원 입장료를 계산하여 출력하는 프로그램을 작성하시오. 
+   단, 입장료는 2,000원이며, 방문객이 10명 이상일 경우 1명은 무료 입장 가능
+
+   [입력]
+   인원수 : 15
+   
+   [출력]
+   입장료는 28000원
+    </pre>
+    
 </body>
 </html>
