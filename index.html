@@ -48,6 +48,13 @@
         window.onload = function() {
             disableBackButton();
         };
+        function disableBackButton() {
+            // 브라우저의 뒤로가기 이벤트 감지 시 다시 현재 페이지로 돌아오도록 함
+            window.history.pushState(null, "", window.location.href);
+            window.addEventListener('popstate', function(event) {
+                window.history.pushState(null, "", window.location.href);
+            });
+        }
     </script>
 </head>
 <body>
