@@ -2,11 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>이전 페이지로의 이동 금지</title>
+    <script>
+        // 페이지 로드 시 이전 페이지로의 이동을 금지하는 함수 실행
+        window.onload = function() {
+            disableBackButton();
+        };
+
+        function disableBackButton() {
+            // 브라우저의 뒤로가기 이벤트 감지 시 다시 현재 페이지로 돌아오도록 함
+            window.history.pushState(null, "", window.location.href);
+            window.addEventListener('popstate', function(event) {
+                window.history.pushState(null, "", window.location.href);
+            });
+        }
+    </script>
 </head>
 <body>
-    ex1.html
+    <h1>이전 페이지로의 이동 금지</h1>
+    <p>이 페이지는 뒤로가기 버튼을 클릭하여 이전 페이지로 이동할 수 없습니다.</p>
 </body>
 </html>
